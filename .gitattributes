@@ -1,11 +1,29 @@
+# Normalize line endings
 * text=auto eol=lf
 
+# Format diff
 *.blade.php diff=html
 *.css diff=css
 *.html diff=html
 *.md diff=markdown
 *.php diff=php
 
+# Ignore binary files
+*.png binary
+*.jpg binary
+*.gif binary
+*.ico binary
+*.svg binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+
+# Ignore files for export
 /.github export-ignore
 CHANGELOG.md export-ignore
 .styleci.yml export-ignore
+/vendor export-ignore
+/node_modules export-ignore
+/public/hot export-ignore
+/storage/*.key export-ignore

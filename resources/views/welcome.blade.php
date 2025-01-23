@@ -31,7 +31,6 @@
             </div>
         </nav>
 
-        
         <div class="slider">
         <div class="slides">
             <div class="slide">
@@ -55,25 +54,108 @@
         const rightArrow = document.querySelector('.arrow-right');
 
         let currentIndex = 0;
+        let autoScrollInterval;
 
         function updateSlidePosition() {
             slides.style.transform = `translateX(-${currentIndex * 100}%)`;
         }
 
-        leftArrow.addEventListener('click', () => {
-            currentIndex = (currentIndex === 0) ? slideCount - 1 : currentIndex - 1;
-            updateSlidePosition();
-        });
+        function goToNextSlide() {
+        currentIndex = (currentIndex === slideCount - 1) ? 0 : currentIndex + 1;
+        updateSlidePosition();
 
-        rightArrow.addEventListener('click', () => {
-            currentIndex = (currentIndex === slideCount - 1) ? 0 : currentIndex + 1;
-            updateSlidePosition();
-        });
-    </script>
+        }
+
+        function goToPreviousSlide() {
+        currentIndex = (currentIndex === 0) ? slideCount - 1 : currentIndex - 1;
+        updateSlidePosition();
+    }
+
+    leftArrow.addEventListener('click', () => {
+        goToPreviousSlide();
+        resetAutoScroll();
+    });
+
+    rightArrow.addEventListener('click', () => {
+        goToNextSlide();
+        resetAutoScroll();
+    });
+
+    function startAutoScroll() {
+        autoScrollInterval = setInterval(goToNextSlide, 3000); // Change slides every 3 seconds
+    }
+
+    function resetAutoScroll() {
+        clearInterval(autoScrollInterval);
+        startAutoScroll();
+    }
+
+    startAutoScroll();
+</script>
     </div>
     <!-- navbar  end -->
-        
+  
+    <section class="promo-prices">
+    <h2>Promo Prices</h2>
+    <div class="promo-cards">
+        <div class="card">
+            <img src="images/promo1.jpg" alt="Promo 1">
+            <p>-30% off on all bags</p>
+            <button>Shop Now</button>
+        </div>
+        <div class="card">
+            <img src="images/promo2.jpg" alt="Promo 2">
+            <p>-30% off coats & jackets</p>
+            <button>Shop Now</button>
+        </div>
+        <div class="card">
+            <img src="images/promo3.jpg" alt="Promo 3">
+            <p>-25% off on shoes</p>
+            <button>Shop Now</button>
+        </div>
+    </div>
+</section>
+    
+<section class="new-arrivals">
+    <h2>New Arrivals</h2>
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="images/product1.jpg" alt="Product 1">
+            <h3>Women's Long Dress</h3>
+            <p>$45.00</p>
+        </div>
+        <div class="product-card">
+            <img src="images/product2.jpg" alt="Product 2">
+            <h3>2 Piece Swimsuit</h3>
+            <p>$35.00</p>
+        </div>
+        <div class="product-card">
+            <img src="images/product3.jpg" alt="Product 3">
+            <h3>Men's Blue Jacket</h3>
+            <p>$145.00</p>
+        </div>
+    </div>
+</section>
 
+<section class="testimonials">
+    <h2>Testimonials</h2>
+    <div class="testimonial">
+        <p>"Integer ut imperdiet erat. Quisque ultrices lectus tellus, eu tristique magna pharetra nec."</p>
+        <h4>- Christine Smith</h4>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <h3>Verceva</h3>
+        <p>Subscribe for a 20% discount and stay updated with our latest collections.</p>
+        <form>
+            <input type="email" placeholder="Enter your email">
+            <button>Subscribe</button>
+        </form>
+    </div>
+    <p>&copy; 2025 Verceva. All rights reserved.</p>
+</footer>
 
 
 </body>
