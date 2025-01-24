@@ -28,7 +28,8 @@
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Catalogue</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><li><a href="{{ route('contact') }}">Contact</a></li>
+                </li>
             </ul>
             <div class="icon">
                 <a href="#"><i class="fa-regular fa-user"></i></a>
@@ -167,10 +168,15 @@
 
                         <!-- Image Container End -->
 
+
+                        
+
+
                          <!-- Testimonial Start -->
 
 <section class="testimonials">
-    <h2>Testimonials</h2>
+<div class="subtitle" >Only The Best</div>
+<div class="heading">Testimonials</div>
     <div class="testimonial">
         <p>"Integer ut imperdiet erat. Quisque ultrices lectus tellus, eu tristique magna pharetra nec."</p>
         <h4>- Christine Smith</h4>
@@ -179,19 +185,49 @@
 
                         <!-- Testimonial End -->
 
+                        
+                       <!-- Poster promo start -->
+
+ <div class="promo-section">
+    <div class="promo-text">
+      <h1>GRAND OPENING</h1>
+      <p>Discover the Future of Style</p>
+      <button>EXPLORE NOW</button>
+    </div>
+    <div class="promo-image">
+      <img src="images/promo.jpg" alt="Promotional Image">
+    </div>
+  </div>
+
+
+                        <!-- poster promo end -->
+
+
                         <!-- Footer Start -->
 
 
-<footer>
-    <div class="footer-content">
-        <h3>Verceva</h3>
-        <p>Subscribe for a 20% discount and stay updated with our latest collections.</p>
-        <form>
-            <input type="email" placeholder="Enter your email">
-            <button>Subscribe</button>
-        </form>
+<footer class="footer">
+  <div class="container-foot">
+    <div class="footer-title">Verceva</div>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Catalogue</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
     </div>
-    <p>&copy; 2025 Verceva. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-pinterest"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-reddit"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+    <p class="copyright">
+    Copyright © 2025 Verceva. All rights reserved.
+    </p>
+  </div>
 </footer>
 
                         <!-- Footer End -->

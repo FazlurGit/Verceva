@@ -30,7 +30,7 @@ nav {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1;
     font-family: 'Poppins', sans-serif; /* Tambahkan font-family */
 }
 
@@ -338,6 +338,61 @@ nav ul li a:hover {
 
                     /* Image Container END  */
 
+                     /* Poster promo  start  */
+
+.promo-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000; /* Background hitam */
+  color: #fff;
+  height: 60vh;
+  padding: 0 10%;
+  margin: 23px;
+}
+
+.promo-text {
+  max-width: 40%;
+}
+
+.promo-text h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.promo-text p {
+  font-size: 1.2rem;
+  margin: 10px 0 20px;
+}
+
+.promo-text button {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.promo-text button:hover {
+  background-color: #ddd;
+}
+
+.promo-image {
+  max-width: 50%;
+}
+
+.promo-image img {
+  width: 100%;
+  height: auto;
+  
+}
+
+                     /* Poster promo  end  */
+
+
+
 
                     /* Testimonial Start */
 
@@ -347,10 +402,21 @@ nav ul li a:hover {
     background-color: #ffff;
 }
 
-.testimonials h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
+.testimonials .subtitle{
+    font-size: 10px;
+    font-weight: 600px;
     color: #23323e;
+    text-transform: uppercase;
+    line-height: 20px;
+    letter-spacing: 0.2em;
+}
+
+.testimonials .heading {
+    font-family: 'Lucida', serif;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: #2f2f2f;
+    margin-top: -4px;
 }
 
 .testimonial {
@@ -372,41 +438,62 @@ nav ul li a:hover {
                        
                         /* Footer Start */
 
-footer {
-    background: rgb(244,244,244);
-    background: linear-gradient(180deg, rgba(244,244,244,1) 0%, rgba(255,255,255,1) 45%);
-    color: black;
-    text-align: center;
-    padding: 30px 10%;
+
+.footer {
+  padding: 20px 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
-footer .footer-content h3 {
-    font-size: 24px;
+.footer-title{
+    font-family: 'Lucida', serif;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: #2f2f2f;
+    margin-top: -4px;
 }
 
-footer .footer-content form {
-    margin-top: 20px;
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    display: flex;
+    justify-content: center; /* Navigasi rata tengah */
+    gap: 20px; /* Jarak antar item */
+  }
+  
+  .footer-nav ul li a {
+    text-decoration: none;
+    color: #333; /* Warna teks gelap */
+    font-size: 12px;
+  }
+  
+  .footer-nav ul li a:hover {
+    color: #ffff; /* Warna saat hover */
+    transition: 0.5s;
+  }
+
+.footer .social-icons {
+  margin-top: 15px;
 }
 
-footer form input {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    margin-right: 10px;
-    width: 250px;
+.footer .social-icons a {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 20px;
+  color: #555;
+  transition: color 0.3s ease;
 }
 
-footer form button {
-    padding: 10px 20px;
-    background-color: #576e7d;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.footer .social-icons a:hover {
+  color: #000;
 }
 
-footer form button:hover {
-    background-color: #7891a1;
+.footer .copyright {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #777;
 }
+
                         /* Footer Start END */
