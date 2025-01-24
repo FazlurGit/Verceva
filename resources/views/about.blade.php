@@ -22,8 +22,8 @@
             <ul>
                 <li><a href="{{ route('home') }}">Home</a></li>
                 <li><a href="#">Catalogue</a></li>
-                <li><a href="{{ route('about') }}">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+                <li><li><a href="{{ route('contact') }}">Contact</a></li>
             </ul>
             <div class="icon">
                 <a href="#"><i class="fa-regular fa-user"></i></a>

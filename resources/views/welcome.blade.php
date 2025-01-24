@@ -27,7 +27,7 @@
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Catalogue</a></li>
-                <li><a href="#">About</a></li>
+                <li><li><a href="{{ route('about') }}">About</a></li>
                 <li><li><a href="{{ route('contact') }}">Contact</a></li>
                 </li>
             </ul>
