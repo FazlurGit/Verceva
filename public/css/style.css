@@ -8,19 +8,18 @@
 }
 
 body{
-    background: #253745;
+
 }
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    height: 83vh;
     width: 100%;
-    
     background-size: cover;
     background-position: center;
 }
 
-/* Navbar */
+                /* Navbar Start */
 nav {
     display: flex;
     justify-content: space-between;
@@ -29,6 +28,7 @@ nav {
     color: white;
     background-color: #23323e;
     border-bottom: 2px solid  black;
+    height: 100px;
     
     
 }
@@ -56,7 +56,7 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: white;
-    font-weight: bold;
+    font-weight: ;
     transition: color 0.3s;
 }
 
@@ -77,7 +77,10 @@ nav ul li a:hover {
     color: #576e7d;
 }
 
-/* Landing Page Content */
+                    /* Navbar END  */
+
+                
+                    /* Landing Page Content  Start */
 
 .slider {
     
@@ -85,7 +88,7 @@ nav ul li a:hover {
     width: 100%;
     height: 70vh;
     overflow: hidden;
-    border-radius: 10px;
+    
 }
 
 .slides {
@@ -96,13 +99,14 @@ nav ul li a:hover {
 .slide {
     min-width: 100%;
     transition: 0.5s;
+    padding: 1px;
 }
 
 .slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    
 }
 
 .arrow {
@@ -127,17 +131,31 @@ nav ul li a:hover {
     right: 10px;
 }
 
-/* Promo Prices */
+                        /* Landing Page Content END */
+
+
+
+                        /* Promo Prices Start */
 .promo-prices {
     text-align: center;
     padding: 50px 10%;
-    background-color: #f4f4f4;
 }
 
-.promo-prices h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
+.promo-prices .subtitle{
+    font-size: 10px;
+    font-weight: 600px;
     color: #23323e;
+    text-transform: uppercase;
+    line-height: 20px;
+    letter-spacing: 0.2em;
+}
+
+.promo-prices .heading {
+    font-family: 'Lucida', serif;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: #2f2f2f;
+    margin-top: -4px;
 }
 
 .promo-cards {
@@ -153,8 +171,9 @@ nav ul li a:hover {
     border-radius: 10px;
     overflow: hidden;
     text-align: center;
+    padding: 40px;
     width: 250px;
-    transition: transform 0.3s;
+    transition:  0.3s;
 }
 
 .card:hover {
@@ -165,6 +184,7 @@ nav ul li a:hover {
     width: 100%;
     height: 150px;
     object-fit: cover;
+    padding: 10px;
 }
 
 .card p {
@@ -186,7 +206,9 @@ nav ul li a:hover {
     background-color: #576e7d;
 }
 
-/* New Arrivals */
+                        /* Promo Prices END */
+
+                        /* New Arrivals Start */
 
 .new-arrivals {
     text-align: center;
@@ -194,11 +216,23 @@ nav ul li a:hover {
     background-color: #ffffff;
 }
 
-.new-arrivals h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
+.new-arrivals .subtitle{
+    font-size: 10px;
+    font-weight: 600px;
     color: #23323e;
+    text-transform: uppercase;
+    line-height: 20px;
+    letter-spacing: 0.2em;
 }
+
+.new-arrivals .heading {
+    font-family: 'Lucida', serif;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: #2f2f2f;
+    margin-top: -4px;
+}
+
 
 .product-grid {
     display: flex;
@@ -212,13 +246,19 @@ nav ul li a:hover {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     text-align: center;
-    padding: 15px;
+    padding: 35px;
     width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.product-card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); 
 }
 
 .product-card img {
     width: 100%;
-    height: 200px;
+    height: 150px;
     object-fit: cover;
     border-radius: 10px;
 }
@@ -234,7 +274,34 @@ nav ul li a:hover {
     font-weight: bold;
 }
 
-/* Testimonial */
+                    /* New Arrivals END */
+
+
+                    /* Image Container Start*/
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 50px 10%;
+}
+
+.image-box {
+    flex: 0 0 595px; /* Menentukan lebar dasar 300px */
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+
+
+
+                    /* Image Container END  */
+
+
+                    /* Testimonial Start */
 
 .testimonials {
     text-align: center;
@@ -261,7 +328,11 @@ nav ul li a:hover {
     color: #23323e;
 }
 
-/* Footer */
+
+                      
+                        /* Testimonial END */
+                       
+                        /* Footer Start */
 
 footer {
     background-color: #23323e;
@@ -299,3 +370,4 @@ footer form button {
 footer form button:hover {
     background-color: #7891a1;
 }
+                        /* Footer Start END */

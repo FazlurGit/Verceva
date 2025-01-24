@@ -16,7 +16,7 @@
 <body>
     <div class="hero">
         
-    <!-- navbar  start -->
+                        <!-- navbar  start -->
         <nav>
             <a href=""><h2 class="logo">Verc<span>eva</span>.</h2></a>
             <ul>
@@ -31,6 +31,10 @@
             </div>
         </nav>
 
+                        <!-- navbar  END -->
+
+                     <!-- Landing Page Start -->
+
         <div class="slider">
         <div class="slides">
             <div class="slide">
@@ -40,7 +44,7 @@
                 <img src="images/hero.jpeg" alt="Image 2">
             </div>
             <div class="slide">
-                <img src="https://via.placeholder.com/800x400?text=Image+3" alt="Image 3">
+                <img src="images/hero3.jpg" alt="Image 3">
             </div>
         </div>
         <button class="arrow arrow-left">&#8249;</button>
@@ -93,31 +97,40 @@
     startAutoScroll();
 </script>
     </div>
-    <!-- navbar  end -->
+
+                    <!-- Landing Page End-->
   
+                    
+                    <!-- Promo Prices Start  -->
     <section class="promo-prices">
-    <h2>Promo Prices</h2>
+    <div class="subtitle" >Only The Best</div>
+    <div class="heading">Promo Prices</div>
     <div class="promo-cards">
         <div class="card">
-            <img src="images/promo1.jpg" alt="Promo 1">
+            <img src="images/product1.jpg" alt="Promo 1">
             <p>-30% off on all bags</p>
             <button>Shop Now</button>
         </div>
         <div class="card">
-            <img src="images/promo2.jpg" alt="Promo 2">
+            <img src="images/product1.jpg" alt="Promo 2">
             <p>-30% off coats & jackets</p>
             <button>Shop Now</button>
         </div>
         <div class="card">
-            <img src="images/promo3.jpg" alt="Promo 3">
+            <img src="images/product1.jpg" alt="Promo 3">
             <p>-25% off on shoes</p>
             <button>Shop Now</button>
         </div>
     </div>
 </section>
+
+                     <!-- Promo Prices END  -->
+
+                      <!-- New Arrivals Start-->
     
 <section class="new-arrivals">
-    <h2>New Arrivals</h2>
+<div class="subtitle" >Only The Best</div>
+<div class="heading">New Arrival</div>
     <div class="product-grid">
         <div class="product-card">
             <img src="images/product1.jpg" alt="Product 1">
@@ -125,17 +138,31 @@
             <p>$45.00</p>
         </div>
         <div class="product-card">
-            <img src="images/product2.jpg" alt="Product 2">
+            <img src="images/product1.jpg" alt="Product 2">
             <h3>2 Piece Swimsuit</h3>
             <p>$35.00</p>
         </div>
         <div class="product-card">
-            <img src="images/product3.jpg" alt="Product 3">
+            <img src="images/product1.jpg" alt="Product 3">
             <h3>Men's Blue Jacket</h3>
             <p>$145.00</p>
         </div>
     </div>
 </section>
+
+                        <!-- NEW Arrival END-->
+
+                        <!-- Image Container start-->
+
+<section class="image-container">
+    <div class="image-box" style="background-image: url('images/poster1.png');"></div>
+    <div class="image-box" style="background-image: url('images/poster1.png');"></div>
+</section>
+
+
+                        <!-- Image Container End -->
+
+                         <!-- Testimonial Start -->
 
 <section class="testimonials">
     <h2>Testimonials</h2>
@@ -144,6 +171,11 @@
         <h4>- Christine Smith</h4>
     </div>
 </section>
+
+                        <!-- Testimonial End -->
+
+                        <!-- Footer Start -->
+
 
 <footer>
     <div class="footer-content">
@@ -156,6 +188,9 @@
     </div>
     <p>&copy; 2025 Verceva. All rights reserved.</p>
 </footer>
+
+                        <!-- Footer End -->
+
 
 
 </body>
