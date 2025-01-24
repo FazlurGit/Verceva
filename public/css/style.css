@@ -11,7 +11,7 @@ body{
 
 }
 
-/* Hero Section */
+    /* Hero Section */
 .hero {
     height: 83vh;
     width: 100%;
@@ -19,62 +19,100 @@ body{
     background-position: center;
 }
 
-                /* Navbar Start */
+    /* Navbar Start */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 10%;
+    padding: 20px 10%;
     color: white;
-    background-color: #23323e;
-    border-bottom: 2px solid  black;
-    height: 100px;
-    
-    
+    background-color: #d1c7bd;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    font-family: 'Poppins', sans-serif; /* Tambahkan font-family */
 }
 
 .logo {
-    color: white;
+    color: grey;
     font-size: 28px;
-    font-weight: bold;
+    font-weight: 700; /* Gunakan font tebal */
     font-style: italic;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
 
-.logo span{
-    color: gray;
+.logo span {
+    color: white;
+    font-weight: 400; /* Gunakan font normal untuk kontras */
 }
 
 nav ul {
+    font-family: 'Playfair Display', serif;
     list-style: none;
     display: flex;
+    gap: 20px;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0;
 }
 
 nav ul li a {
+    font-family: 'Playfair Display', serif;
     text-decoration: none;
-    color: white;
-    font-weight: ;
-    transition: color 0.3s;
+    color: black;
+    font-weight: 600; /* Font lebih tebal untuk menu */
+    transition: all 0.3s;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px; /* Ukuran font untuk navigasi */
 }
 
 nav ul li a:hover {
-    color: #576e7d;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .icon a {
-    color: white;
+    color: black;
     font-size: 18px;
     text-decoration: none;
-    transition: color 0.3s;
-    margin: 10px;
-
+    transition: all 0.3s;
+    padding-right: 10px;
+    padding-left: 10px; 
+    padding-top: 5px;
+    padding-bottom: 5px;    
+    border-radius: 50%;
 }
 
 .icon a:hover {
-    color: #576e7d;
+    color: #fafafa;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+        /* Responsive */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .icon {
+        margin-top: 10px;
+    }
 }
 
                     /* Navbar END  */
@@ -306,7 +344,7 @@ nav ul li a:hover {
 .testimonials {
     text-align: center;
     padding: 50px 10%;
-    background-color: #f4f4f4;
+    background-color: #ffff;
 }
 
 .testimonials h2 {
@@ -335,8 +373,9 @@ nav ul li a:hover {
                         /* Footer Start */
 
 footer {
-    background-color: #23323e;
-    color: white;
+    background: rgb(244,244,244);
+    background: linear-gradient(180deg, rgba(244,244,244,1) 0%, rgba(255,255,255,1) 45%);
+    color: black;
     text-align: center;
     padding: 30px 10%;
 }
