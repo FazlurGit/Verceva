@@ -47,7 +47,7 @@
                 <img src="images/Cover3.jpg" alt="Image 1">
             </div>
             <div class="slide">
-                <img src="images/Cover2.jpg" alt="Image 2">
+                <img src="images/Cover2edit.jpg" alt="Image 2">
             </div>
             <div class="slide">
                 <img src="images/Cover4.jpg" alt="Image 3">
