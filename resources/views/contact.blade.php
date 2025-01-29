@@ -28,6 +28,7 @@
             <div class="icon">
                 <a href="#"><i class="fa-regular fa-user"></i></a>
                 <a href="#"><i class="fa-regular fa-heart"></i></a>
+                <a href="#" id="hamburger"><i class="fa-solid fa-bars"></i></a>
             </div>
         </nav>
 

@@ -22,20 +22,33 @@
     <div class="hero">
         
                         <!-- navbar  start -->
-         <nav>
-            <a href=""><h2 class="logo">Verc<span>eva</span>.</h2></a>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Catalogue</a></li>
-                <li><li><a href="{{ route('about') }}">About</a></li>
-                <li><li><a href="{{ route('contact') }}">Contact</a></li>
-                </li>
-            </ul>
-            <div class="icon">
-                <a href="#"><i class="fa-regular fa-user"></i></a>
-                <a href="#"><i class="fa-regular fa-heart"></i></a>
-            </div>
-        </nav>
+ <nav>
+        <a href="#"><h2 class="logo">Verc<span>eva</span>.</h2></a>
+
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Catalogue</a></li>
+            <li><a href="{{ route('about') }}">About</a></li>
+            <li><a href="{{ route('contact') }}">Contact</a></li>
+        </ul>
+
+        <div class="icon">
+            <a href="#"><i class="fa-regular fa-user"></i></a>
+            <a href="#"><i class="fa-regular fa-heart"></i></a>
+        </div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            ☰
+        </div>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+
 
                         <!-- navbar  END -->
 
@@ -108,53 +121,91 @@
   
                     
                     <!-- Promo Prices Start  -->
-    <section class="promo-prices">
-    <div class="subtitle" >Only The Best</div>
+                    <section class="promo-prices">
+    <div class="subtitle">Only The Best</div>
     <div class="heading">Promo Prices</div>
-    <div class="promo-cards">
-        <div class="card">
-            <img src="images/product1.jpg" alt="Promo 1">
-            <p>-30% off on all bags</p>
-            <button>Shop Now</button>
+
+    <div class="carousel-container">
+        <button class="prev-btn">&#10094;</button> <!-- Tombol Kiri -->
+
+        <div class="carousel">
+            <div class="card">
+                <img src="images/product1.jpg" alt="Promo 1">
+                <p>-30% off on all bags</p>
+                <button>Shop Now</button>
+            </div>
+            <div class="card active"> <!-- Card tengah -->
+                <img src="images/product2.jpg" alt="Promo 2">
+                <p>-30% off coats & jackets</p>
+                <button>Shop Now</button>
+            </div>
+            <div class="card">
+                <img src="images/product1.jpg" alt="Promo 3">
+                <p>-25% off on shoes</p>
+                <button>Shop Now</button>
+            </div>
         </div>
-        <div class="card">
-            <img src="images/product1.jpg" alt="Promo 2">
-            <p>-30% off coats & jackets</p>
-            <button>Shop Now</button>
-        </div>
-        <div class="card">
-            <img src="images/product1.jpg" alt="Promo 3">
-            <p>-25% off on shoes</p>
-            <button>Shop Now</button>
-        </div>
+
+        <button class="next-btn">&#10095;</button> <!-- Tombol Kanan -->
     </div>
 </section>
+
 
                      <!-- Promo Prices END  -->
 
                       <!-- New Arrivals Start-->
     
-<section class="new-arrivals">
-<div class="subtitle" >Only The Best</div>
-<div class="heading">New Arrival</div>
-    <div class="product-grid">
-        <div class="product-card">
-            <img src="images/product1.jpg" alt="Product 1">
-            <h3>Women's Long Dress</h3>
-            <p>$45.00</p>
+                      <section class="new-arrivals">
+    <div class="subtitle">Only The Best</div>
+    <div class="heading">New Arrival</div>
+
+    <div class="carousel-container">
+        <button class="prev-btn">&#10094;</button> <!-- Tombol Kiri -->
+
+        <div class="carousel">
+            <div class="product-card">
+                <img src="images/product1.jpg" alt="Product 1">
+                <h3>Women's Long Dress</h3>
+                <p>$45.00</p>
+            </div>
+            <div class="product-card active"> <!-- Card tengah -->
+                <img src="images/product2.jpg" alt="Product 2">
+                <h3>2 Piece Swimsuit</h3>
+                <p>$35.00</p>
+            </div>
+            <div class="product-card">
+                <img src="images/product1.jpg" alt="Product 3">
+                <h3>Men's Blue Jacket</h3>
+                <p>$145.00</p>
+            </div>
         </div>
-        <div class="product-card">
-            <img src="images/product1.jpg" alt="Product 2">
-            <h3>2 Piece Swimsuit</h3>
-            <p>$35.00</p>
-        </div>
-        <div class="product-card">
-            <img src="images/product1.jpg" alt="Product 3">
-            <h3>Men's Blue Jacket</h3>
-            <p>$145.00</p>
-        </div>
+
+        <button class="next-btn">&#10095;</button> <!-- Tombol Kanan -->
     </div>
 </section>
+
+<!-- JavaScript -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.querySelector(".carousel");
+    let angle = 0;
+
+    document.querySelector(".next-btn").addEventListener("click", function () {
+        angle -= 120; // Geser searah jarum jam
+        carousel.style.transform = `rotateY(${angle}deg)`;
+    });
+
+    document.querySelector(".prev-btn").addEventListener("click", function () {
+        angle += 120; // Geser berlawanan arah jarum jam
+        carousel.style.transform = `rotateY(${angle}deg)`;
+    });
+});
+</script>
+
+
+
+
+
 
                         <!-- NEW Arrival END-->
 

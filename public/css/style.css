@@ -7,9 +7,6 @@
     text-decoration: none;
 }
 
-body{
-
-}
 
     /* Hero Section */
 .hero {
@@ -20,100 +17,96 @@ body{
 }
 
     /* Navbar Start */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 10%;
-    color: white;
-    background-color: #d1c7bd;
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    font-family: 'Poppins', sans-serif; /* Tambahkan font-family */
-}
-
-.logo {
-    color: grey;
-    font-size: 28px;
-    font-weight: 700; /* Gunakan font tebal */
-    font-style: italic;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-}
-
-.logo span {
-    color: white;
-    font-weight: 400; /* Gunakan font normal untuk kontras */
-}
-
-nav ul {
-    font-family: 'Playfair Display', serif;
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-nav ul li {
-    margin: 0;
-}
-
-nav ul li a {
-    font-family: 'Playfair Display', serif;
-    text-decoration: none;
-    color: black;
-    font-weight: 600; /* Font lebih tebal untuk menu */
-    transition: all 0.3s;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size: 16px; /* Ukuran font untuk navigasi */
-}
-
-nav ul li a:hover {
-    color: #fff;
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.icon {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.icon a {
-    color: black;
-    font-size: 18px;
-    text-decoration: none;
-    transition: all 0.3s;
-    padding-right: 10px;
-    padding-left: 10px; 
-    padding-top: 5px;
-    padding-bottom: 5px;    
-    border-radius: 50%;
-}
-
-.icon a:hover {
-    color: #fafafa;
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-        /* Responsive */
-@media (max-width: 768px) {
     nav {
-        flex-direction: column;
-        align-items: flex-start;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 10%;
+        background-color: #d1c7bd;
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
     }
 
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 10px;
+    .logo {
+        color: grey;
+        font-size: 28px;
+        font-weight: 700;
+        font-style: italic;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    }
+
+    .logo span {
+        color: white;
+        font-weight: 400;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+
+    .nav-links li a {
+        text-decoration: none;
+        color: black;
+        font-weight: 600;
+        transition: all 0.3s;
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+
+    .nav-links li a:hover {
+        color: #fff;
+        background-color: rgba(255, 255, 255, 0.2);
     }
 
     .icon {
-        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
     }
-}
+
+    .icon a {
+        color: black;
+        font-size: 18px;
+        text-decoration: none;
+    }
+
+    .hamburger {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    @media screen and (max-width: 480px) {
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            left: -100%;
+            width: 100%;
+            background-color: #d1c7bd;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: left 0.3s ease-in-out;
+        }
+
+        .nav-links.active {
+            display: flex;
+            left: 0;
+        }
+
+        .hamburger {
+            display: block;
+        }
+
+        .icon {
+            display: none;
+        }
+    }
 
                     /* Navbar END  */
 
@@ -179,50 +172,89 @@ nav ul li a:hover {
     padding: 50px 10%;
 }
 
-.promo-prices .subtitle{
+.promo-prices .subtitle {
     font-size: 10px;
-    font-weight: 600px;
+    font-weight: 600;
     color: #23323e;
     text-transform: uppercase;
-    line-height: 20px;
     letter-spacing: 0.2em;
 }
 
 .promo-prices .heading {
-    font-family: 'Lucida', serif;
     font-size: 40px;
     text-transform: uppercase;
     color: #2f2f2f;
-    margin-top: -4px;
 }
 
-.promo-cards {
+/* Container untuk carousel */
+.carousel-container {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     gap: 20px;
+    perspective: 1200px;
+    position: relative;
+    height: 320px;
 }
 
+/* Carousel utama */
+.carousel {
+    display: flex;
+    position: absolute;
+    width: 250px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease-in-out;
+}
+
+/* Style dasar card */
 .card {
     background: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    overflow: hidden;
     text-align: center;
-    padding: 40px;
+    padding: 20px;
     width: 250px;
-    transition:  0.3s;
+    height: 300px;
+    position: absolute;
+    transform-origin: center;
 }
 
-.card:hover {
-    transform: scale(1.05);
+/* Posisi card agar rapi */
+.card:nth-child(1) { transform: rotateY(0deg) translateZ(300px); }
+.card:nth-child(2) { transform: rotateY(120deg) translateZ(300px); }
+.card:nth-child(3) { transform: rotateY(240deg) translateZ(300px); }
+
+/* Tombol Slide */
+.prev-btn, .next-btn {
+    background-color: #23323e;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
 }
 
+/* Posisi tetap */
+.prev-btn { left: 5%; }
+.next-btn { right: 5%; }
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: #576e7d;
+}
+
+/* Perbaikan ukuran gambar */
 .card img {
     width: 100%;
-    height: 150px;
+    height: 180px;
     object-fit: cover;
-    padding: 10px;
+    border-radius: 10px;
 }
 
 .card p {
@@ -244,6 +276,7 @@ nav ul li a:hover {
     background-color: #576e7d;
 }
 
+
                         /* Promo Prices END */
 
                         /* New Arrivals Start */
@@ -254,63 +287,97 @@ nav ul li a:hover {
     background-color: #ffffff;
 }
 
-.new-arrivals .subtitle{
+.new-arrivals .subtitle {
     font-size: 10px;
-    font-weight: 600px;
+    font-weight: 600;
     color: #23323e;
     text-transform: uppercase;
-    line-height: 20px;
     letter-spacing: 0.2em;
 }
 
 .new-arrivals .heading {
-    font-family: 'Lucida', serif;
     font-size: 40px;
     text-transform: uppercase;
     color: #2f2f2f;
-    margin-top: -4px;
+  
 }
 
-
-.product-grid {
+/* Container untuk carousel */
+.carousel-container {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     gap: 20px;
+    perspective: 1200px; /* Tambah kedalaman agar tidak berantakan */
+    position: relative;
+    height: 320px; /* Tetapkan tinggi agar card tidak hancur */
+    margin-top: 100px;
 }
 
+/* Carousel utama */
+.carousel {
+    display: flex;
+    position: absolute;
+    width: 250px; /* Lebar carousel tetap */
+    height: 300px;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease-in-out;
+    
+}
+
+/* Style dasar card */
 .product-card {
     background: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     text-align: center;
-    padding: 35px;
+    padding: 20px;
     width: 250px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    height: 300px;
+    position: absolute;
+    transform-origin: center; /* Pastikan rotasi dari tengah */
 }
 
-.product-card:hover {
-    transform: scale(1.05); 
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); 
+/* Perbaikan posisi card agar lurus & sejajar */
+.product-card:nth-child(1) { transform: rotateY(0deg) translateZ(300px); }
+.product-card:nth-child(2) { transform: rotateY(120deg) translateZ(300px); }
+.product-card:nth-child(3) { transform: rotateY(240deg) translateZ(300px); }
+
+
+
+/* Tombol Slide */
+.prev-btn, .next-btn {
+    background-color: #23323e;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
 }
 
+/* Tombol di posisi tetap */
+.prev-btn { left: 5%; }
+.next-btn { right: 5%; }
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: #576e7d;
+}
+
+/* Perbaikan ukuran gambar agar tetap rapi */
 .product-card img {
     width: 100%;
-    height: 150px;
+    height: 180px;
     object-fit: cover;
     border-radius: 10px;
 }
 
-.product-card h3 {
-    margin: 15px 0 10px;
-    font-size: 18px;
-}
 
-.product-card p {
-    font-size: 16px;
-    color: #23323e;
-    font-weight: bold;
-}
 
                     /* New Arrivals END */
 
@@ -498,4 +565,41 @@ nav ul li a:hover {
 
                         /* Footer Start END */
 
-                       
+
+/* Semua Responsive akan di taro di bawh sini */
+
+/* Responsive For New Arrival Dan Promo Price */
+  @media screen and (max-width: 768px) {
+    .carousel-container {
+        width: 100%;
+        padding: 0 10px; /* Supaya ada jarak dari sisi layar */
+    }
+
+    .product-grid,
+    .promo-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-card,
+    .card {
+        width: 90%; /* Supaya muat di layar HP */
+        max-width: 300px; /* Batas ukuran card */
+        padding: 20px;
+    }
+
+    .prev-btn, .next-btn {
+        font-size: 18px; /* Kecilkan tombol di HP */
+        padding: 8px 12px;
+    }
+
+    .heading {
+        font-size: 30px; /* Kecilkan judul */
+    }
+
+    .new-arrivals .subtitle,
+    .promo-prices .subtitle {
+        font-size: 8px; /* Kecilkan subtitle */
+    }
+}
+                     
