@@ -43,7 +43,7 @@
 }
 
 nav ul {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', serif, sans-serif;
     list-style: none;
     display: flex;
     gap: 20px;
@@ -92,21 +92,55 @@ nav ul li a:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-        /* Responsive */
+/* Media Queries untuk Responsif */
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
     nav ul {
         flex-direction: column;
         gap: 10px;
-        margin-top: 10px;
+        display: none; /* Tambahkan toggle menu jika diperlukan */
     }
 
-    .icon {
-        margin-top: 10px;
+    nav .icon {
+        display: none; /* Sembunyikan ikon user dan heart di perangkat kecil */
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .about-section h4 {
+        font-size: 1.3rem;
+    }
+
+    .footer .footer-nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.8rem;
+    }
+
+    .about-section h4 {
+        font-size: 1.2rem;
+    }
+
+    .about-section p {
+        font-size: 0.9rem;
+    }
+
+    .footer .social-icons a {
+        font-size: 1rem;
     }
 }
 
@@ -140,7 +174,7 @@ nav ul li a:hover {
 }
 
 .about-section {
-    margin-top: 69px;
+    margin-top: 110px;
     padding: 50px 10%;
     background-color: black;
     text-align: center;
