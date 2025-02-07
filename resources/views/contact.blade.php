@@ -17,20 +17,32 @@
     <div class="hero">
         
                         <!-- navbar  start -->
-        <nav>
-            <a href=""><h2 class="logo">Verc<span>eva</span>.</h2></a>
-            <ul>
-                <li><a href="{{ route('home') }}">Home</a></li>
-                <li><a href="#">Catalogue</a></li>
-                <li><a href="{{ route('about') }}">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-            <div class="icon">
-                <a href="#"><i class="fa-regular fa-user"></i></a>
-                <a href="#"><i class="fa-regular fa-heart"></i></a>
-                <a href="#" id="hamburger"><i class="fa-solid fa-bars"></i></a>
-            </div>
-        </nav>
+                        <nav>
+        <a href="#"><h2 class="logo">Verc<span>eva</span>.</h2></a>
+
+        <ul class="nav-links">
+            <li><a href="{{ route('home') }}">Home</a></li>
+            <li><a href="#">Catalogue</a></li>
+            <li><a href="{{ route('about') }}">About</a></li>
+            <li><a href="{{ route('contact') }}">Contact</a></li>
+        </ul>
+
+        <div class="icon">
+            <a href="#"><i class="fa-regular fa-user"></i></a>
+            <a href="#"><i class="fa-regular fa-heart"></i></a>
+        </div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            ☰
+        </div>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
 
                         <!-- navbar  END -->
 
@@ -41,10 +53,11 @@
     <h1>Welcome to Our Contact Page</h1>
     <p>If you have any questions or feedback, we’re here to assist you. Let’s work together to create something amazing!</p>
     <a href="#contact-form">
-            <button>Get in Touch</button>
-        </a>
+      <button>Get in Touch</button>
+    </a>
+  </div>
 </div>
-</div>
+
 
 
 

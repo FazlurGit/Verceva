@@ -7,6 +7,12 @@
     text-decoration: none;
 }
 
+html, body {
+    overflow-x: hidden; /* Menghilangkan scroll horizontal */
+    width: 100%;
+}
+
+
 
     /* Hero Section */
 .hero {
@@ -80,7 +86,7 @@
         cursor: pointer;
     }
 
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 800px) {
         .nav-links {
             display: none;
             flex-direction: column;
@@ -389,16 +395,49 @@
     justify-content: center;
     gap: 10px;
     padding: 50px 10%;
+    flex-wrap: nowrap; /* Tetap sejajar di layar besar */
 }
 
 .image-box {
-    flex: 0 0 595px; /* Menentukan lebar dasar 300px */
+    width: 595px;  /* Pastikan lebar tetap */
     height: 400px;
     background-size: cover;
     background-position: center;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
+
+/* 📱 Responsive untuk layar kecil */
+@media (max-width: 800px) {
+    .image-container {
+        flex-wrap: wrap; /* Baru turun ke bawah */
+        justify-content: center;
+        padding: 30px 5%;
+    }
+
+    .image-box {
+        width: 90%; /* Gunakan persen agar fleksibel */
+        height: auto; /* Biarkan tinggi menyesuaikan */
+        aspect-ratio: 16/9; /* Biar tetap proporsional */
+    }
+}
+
+/* 📱 Responsive untuk HP (446px ke bawah) */
+@media (max-width: 480px) {
+    .image-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 5%;
+    }
+
+    .image-box {
+        width: 100%; /* Pastikan tetap terlihat */
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+}
+
+
 
 
 
@@ -411,11 +450,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #000; /* Background hitam */
+  background-color: #000;
   color: #fff;
   height: 60vh;
   padding: 0 10%;
   margin: 23px;
+  flex-wrap: wrap; /* Agar bisa turun ke bawah di layar kecil */
 }
 
 .promo-text {
@@ -453,7 +493,51 @@
 .promo-image img {
   width: 100%;
   height: auto;
-  
+}
+
+/* Responsive untuk layar kecil */
+@media (max-width: 768px) {
+  .promo-section {
+    flex-direction: column; /* Stack elemen ke bawah */
+    height: auto;
+    text-align: center;
+  }
+
+  .promo-text {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .promo-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .promo-text p {
+    font-size: 1rem;
+  }
+
+  .promo-image {
+    max-width: 80%;
+  }
+}
+
+/* Responsive untuk layar sangat kecil (mobile) */
+@media (max-width: 480px) {
+  .promo-text h1 {
+    font-size: 2rem;
+  }
+
+  .promo-text p {
+    font-size: 0.9rem;
+  }
+
+  .promo-image {
+    max-width: 100%;
+  }
+
+  .promo-section {
+    padding: 0 5%;
+  }
 }
 
                      /* Poster promo  end  */
@@ -469,9 +553,9 @@
     background-color: #ffff;
 }
 
-.testimonials .subtitle{
+.testimonials .subtitle {
     font-size: 10px;
-    font-weight: 600px;
+    font-weight: 600;
     color: #23323e;
     text-transform: uppercase;
     line-height: 20px;
@@ -491,6 +575,7 @@
     margin: 0 auto;
     font-style: italic;
     color: #576e7d;
+    padding: 20px;
 }
 
 .testimonial h4 {
@@ -498,6 +583,54 @@
     font-weight: bold;
     color: #23323e;
 }
+
+/* Styling gambar profil */
+.profile-image {
+    margin-top: 10px;
+}
+
+.profile-image img {
+    width: 60px;  /* Ukuran gambar kecil */
+    height: 60px;
+    border-radius: 50%; /* Membuat gambar bulat */
+    object-fit: cover; /* Agar gambar tidak terdistorsi */
+    border: 2px solid #23323e; /* Tambahkan border jika ingin */
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Untuk layar tablet */
+@media screen and (max-width: 768px) {
+    .testimonials {
+        padding: 40px 5%;
+    }
+    .testimonials .heading {
+        font-size: 32px;
+    }
+    .testimonial {
+        max-width: 100%;
+        padding: 15px;
+    }
+}
+
+/* Untuk layar HP */
+@media screen and (max-width: 480px) {
+    .testimonials {
+        padding: 30px 5%;
+    }
+    .testimonials .heading {
+        font-size: 28px;
+    }
+    .testimonial p {
+        font-size: 14px;
+    }
+    .profile-image img {
+        width: 50px; /* Gambar lebih kecil di HP */
+        height: 50px;
+    }
+}
+
+
 
 
                       

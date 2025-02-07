@@ -187,19 +187,26 @@
 <!-- JavaScript -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-    const carousel = document.querySelector(".carousel");
-    let angle = 0;
+    const carousels = document.querySelectorAll(".carousel-container"); // Ambil semua carousel-container
 
-    document.querySelector(".next-btn").addEventListener("click", function () {
-        angle -= 120; // Geser searah jarum jam
-        carousel.style.transform = `rotateY(${angle}deg)`;
-    });
+    carousels.forEach(container => {
+        let angle = 0;
+        const carousel = container.querySelector(".carousel");
+        const nextBtn = container.querySelector(".next-btn");
+        const prevBtn = container.querySelector(".prev-btn");
 
-    document.querySelector(".prev-btn").addEventListener("click", function () {
-        angle += 120; // Geser berlawanan arah jarum jam
-        carousel.style.transform = `rotateY(${angle}deg)`;
+        nextBtn.addEventListener("click", function () {
+            angle -= 120; // Geser searah jarum jam
+            carousel.style.transform = `rotateY(${angle}deg)`;
+        });
+
+        prevBtn.addEventListener("click", function () {
+            angle += 120; // Geser berlawanan arah jarum jam
+            carousel.style.transform = `rotateY(${angle}deg)`;
+        });
     });
 });
+
 </script>
 
 
@@ -226,13 +233,17 @@ document.addEventListener("DOMContentLoaded", function () {
                          <!-- Testimonial Start -->
 
 <section class="testimonials">
-<div class="subtitle" >Only The Best</div>
-<div class="heading">Testimonials</div>
+    <div class="subtitle">Only The Best</div>
+    <div class="heading">Testimonials</div>
     <div class="testimonial">
         <p>"Integer ut imperdiet erat. Quisque ultrices lectus tellus, eu tristique magna pharetra nec."</p>
         <h4>- Christine Smith</h4>
+        <div class="profile-image">
+            <img src="images/profil.jpg" alt="Christine Smith">
+        </div>
     </div>
 </section>
+
 
                         <!-- Testimonial End -->
 
