@@ -23,32 +23,50 @@
         
                         <!-- navbar  start -->
  <nav>
-        <a href="#"><h2 class="logo">Verc<span>eva</span>.</h2></a>
+    <a href="#"><h2 class="logo">Verc<span>eva</span>.</h2></a>
 
-        <ul class="nav-links">
+    <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Catalogue</a></li>
+        <li><a href="{{ route('about') }}">About</a></li>
+        <li><a href="{{ route('contact') }}">Contact</a></li>
+    </ul>
+
+    <div class="icon">
+        <a href="#"><i class="fa-regular fa-user"></i></a>
+        <a href="#"><i class="fa-regular fa-heart"></i></a>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <span class="close-btn" onclick="toggleMenu()">×</span>
+        <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">Catalogue</a></li>
             <li><a href="{{ route('about') }}">About</a></li>
             <li><a href="{{ route('contact') }}">Contact</a></li>
         </ul>
+    </div>
+</nav>
 
-        <div class="icon">
-            <a href="#"><i class="fa-regular fa-user"></i></a>
-            <a href="#"><i class="fa-regular fa-heart"></i></a>
-        </div>
+<script>
+    function toggleMenu() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('active');
+    }
 
-        <div class="hamburger" onclick="toggleMenu()">
-            ☰
-        </div>
-    </nav>
+    // Menutup sidebar saat klik di luar sidebar
+    window.addEventListener('click', function (e) {
+        const sidebar = document.getElementById('sidebar');
+        const hamburger = document.querySelector('.hamburger');
 
-    <script>
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('active');
+        if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
+            sidebar.classList.remove('active');
         }
-    </script>
-
+    });
+</script>
 
                         <!-- navbar  END -->
 

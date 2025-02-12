@@ -16,19 +16,52 @@
 <body>
     <div class="hero">
         <!-- Navbar Start -->
-        <nav>
-            <a href=""><h2 class="logo">Verc<span>eva</span>.</h2></a>
-            <ul>
-                <li><a href="{{ route('home') }}">Home</a></li>
-                <li><a href="#">Catalogue</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="{{ route('contact') }}">Contact</a></li>
-            </ul>
-            <div class="icon">
-                <a href="#"><i class="fa-regular fa-user"></i></a>
-                <a href="#"><i class="fa-regular fa-heart"></i></a>
-            </div>
-        </nav>
+    
+   <nav>
+    <a href="#"><h2 class="logo">Verc<span>eva</span>.</h2></a>
+
+    <ul class="nav-links">
+        <li><a href="{{ route('home') }}">Home</a></li>
+        <li><a href="#">Catalogue</a></li>
+        <li><a href="{{ route('about') }}">About</a></li>
+        <li><a href="{{ route('contact') }}">Contact</a></li>
+    </ul>
+
+    <div class="icon">
+        <a href="#"><i class="fa-regular fa-user"></i></a>
+        <a href="#"><i class="fa-regular fa-heart"></i></a>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <span class="close-btn" onclick="toggleMenu()">×</span>
+        <ul>
+            <li><a href="#{{ route('home') }}">Home</a></li>
+            <li><a href="#">Catalogue</a></li>
+            <li><a href="{{ route('about') }}">About</a></li>
+            <li><a href="{{ route('contact') }}">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    function toggleMenu() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('active');
+    }
+
+    // Menutup sidebar saat klik di luar sidebar
+    window.addEventListener('click', function (e) {
+        const sidebar = document.getElementById('sidebar');
+        const hamburger = document.querySelector('.hamburger');
+
+        if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
+            sidebar.classList.remove('active');
+        }
+    });
+</script>
         <!-- Navbar End -->
 
         <!-- Hero Content -->
