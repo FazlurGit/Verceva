@@ -9,9 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-
 </head>
 <body>
 
@@ -38,22 +36,46 @@
 
     <!-- Kategori -->
     <nav class="bg-white shadow-sm sticky top-[60px] z-40">
-    <div class="container mx-auto px-4 py-2 flex gap-4 overflow-x-auto justify-center">
-        @php
-            $categories = ['Red Carpet', 'Dresses', 'Skirts', 'Trousers', 'Jeans', 'Jumpsuits', 'Knits'];
-        @endphp
-        @foreach($categories as $index => $category)
-            <button class="px-4 py-2 {{ $index == 0 ? 'bg-yellow-500 text-white' : 'bg-gray-200 text-gray-700' }} rounded-full">
-                {{ $category }}
-            </button>
-        @endforeach
-    </div>
-</nav>
-
+        <div class="container mx-auto px-4 py-2 flex gap-4 overflow-x-auto justify-center">
+            @php
+                $categories = ['Red Carpet', 'Dresses', 'Skirts', 'Trousers', 'Jeans', 'Jumpsuits', 'Knits'];
+            @endphp
+            @foreach($categories as $index => $category)
+                <button class="px-4 py-2 {{ $index == 0 ? 'bg-yellow-500 text-white' : 'bg-gray-200 text-gray-700' }} rounded-full">
+                    {{ $category }}
+                </button>
+            @endforeach
+        </div>
+    </nav>
 
     <!-- Katalog Produk -->
     <div class="container mt-4">
         <div class="row">
+            @php
+                $products = [
+                    [
+                        'name' => 'Red Dress',
+                        'price' => 250000,
+                        'image' => asset('../images/Reddress.jpg') // Ganti dengan nama file gambar baru
+                    ],
+                    [
+                        'name' => 'Blue Skirt',
+                        'price' => 200000,
+                        'image' => asset('../images/Blueskirt.jpg') // Ganti dengan nama file gambar baru
+                    ],
+                    [
+                        'name' => 'Black Trousers',
+                        'price' => 300000,
+                        'image' => asset('../images/Blackjeans.jpg') // Ganti dengan nama file gambar baru
+                    ],
+                    [
+                        'name' => 'Denim Jeans',
+                        'price' => 350000,
+                        'image' => asset('../images/Denimjeans.jpg') // Ganti dengan nama file gambar baru
+                    ],
+                ];
+            @endphp
+
             @if (!empty($products))
                 @foreach($products as $product)
                     <div class="col-md-3 mb-4">
@@ -70,35 +92,32 @@
         </div>
     </div>
 
-                        <!-- Footer Start -->
-
-
-                        <footer class="footer">
-  <div class="container-foot">
-    <div class="footer-title">Verceva</div>
-    <div class="footer-nav">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Catalogue</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
-    <div class="social-icons">
-      <a href="#"><i class="fab fa-pinterest"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-reddit"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-    </div>
-    <p class="copyright">
-    Copyright © 2025 Verceva. All rights reserved.
-    </p>
-  </div>
-</footer>
-
-                        <!-- Footer End -->
-
+    
+    <!-- Footer Start -->
+    <footer class="footer">
+        <div class="container-foot">
+            <div class="footer-title">Verceva</div>
+            <div class="footer-nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Catalogue</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-reddit"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="copyright">
+                Copyright © 2025 Verceva. All rights reserved.
+            </p>
+        </div>
+    </footer>
+    <!-- Footer End -->
 
 </body>
 </html>
