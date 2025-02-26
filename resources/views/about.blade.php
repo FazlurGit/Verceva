@@ -21,10 +21,10 @@
     <a href="#"><h2 class="logo">Verc<span>eva</span>.</h2></a>
 
     <ul class="nav-links">
-        <li><a href="{{ route('home') }}">Home</a></li>
-        <li><a href="#">Catalogue</a></li>
-        <li><a href="{{ route('about') }}">About</a></li>
-        <li><a href="{{ route('contact') }}">Contact</a></li>
+            <li><a href="{{ route('home') }}">Home</a></li>
+            <li><a href="{{ route('catalog') }}">Catalogue</a></li>
+            <li><a href="{{ route('about') }}">About</a></li>
+            <li><a href="{{ route('contact') }}">Contact</a></li>
     </ul>
 
     <div class="icon">
@@ -38,8 +38,8 @@
     <div class="sidebar" id="sidebar">
         <span class="close-btn" onclick="toggleMenu()">×</span>
         <ul>
-            <li><a href="#{{ route('home') }}">Home</a></li>
-            <li><a href="#">Catalogue</a></li>
+            <li><a href="{{ route('home') }}">Home</a></li>
+            <li><a href="{{ route('catalog') }}">Catalogue</a></li>
             <li><a href="{{ route('about') }}">About</a></li>
             <li><a href="{{ route('contact') }}">Contact</a></li>
         </ul>
@@ -88,13 +88,13 @@
     <div class="container-foot">
         <div class="footer-title">Verceva</div>
         <div class="footer-nav">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Catalogue</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        </div>
+    <ul>
+        <li><a href="{{ route('home') }}">Home</a></li>
+        <li><a href="{{ route('catalog') }}">Catalogue</a></li>
+        <li><a href="{{ route('about') }}">About</a></li>
+        <li><a href="{{ route('contact') }}">Contact</a></li>
+    </ul>
+</div>
         <div class="social-icons">
         <a href="#"><i class="fab fa-pinterest"></i></a>
         <a href="#"><i class="fab fa-linkedin"></i></a>

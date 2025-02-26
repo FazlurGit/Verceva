@@ -14,25 +14,55 @@
 <body>
 
     <!-- Header / Navbar -->
-    <div class="hero">
-        <nav>
-            <a href="{{ route('home') }}"><h2 class="logo">Verc<span>eva</span>.</h2></a>
-            <ul>
-                <li><a href="{{ route('home') }}">Home</a></li>
-                <li><a href="{{ route('catalog') }}">Catalogue</a></li>
-                <li><a href="{{ route('about') }}">About</a></li>
-                <li><a href="{{ route('contact') }}">Contact</a></li>
-            </ul>
-            <div class="icon">
-                <a href="#"><i class="fa-regular fa-user"></i></a>
-                <a href="#"><i class="fa-regular fa-heart"></i></a>
-            </div>
-        </nav>
-        <div class="content">
-            <h1>Welcome to Verceva</h1>
-            <p>Explore our women's clothing collection</p>
-        </div>
+    <nav>
+    <a href="#" style="text-decoration: none;"><h2 class="logo">Verc<span>eva</span>.</h2></a>
+
+
+    <ul class="nav-links">
+            <li><a href="{{ route('home') }}">Home</a></li>
+            <li><a href="{{ route('catalog') }}">Catalogue</a></li>
+            <li><a href="{{ route('about') }}">About</a></li>
+            <li><a href="{{ route('contact') }}">Contact</a></li>
+    </ul>
+
+    <div class="icon">
+        <a href="#"><i class="fa-regular fa-user"></i></a>
+        <a href="#"><i class="fa-regular fa-heart"></i></a>
     </div>
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <span class="close-btn" onclick="toggleMenu()">×</span>
+        <ul>
+            <li><a href="{{ route('home') }}">Home</a></li>
+            <li><a href="{{ route('catalog') }}">Catalogue</a></li>
+            <li><a href="{{ route('about') }}">About</a></li>
+            <li><a href="{{ route('contact') }}">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    function toggleMenu() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('active');
+    }
+
+    // Menutup sidebar saat klik di luar sidebar
+    window.addEventListener('click', function (e) {
+        const sidebar = document.getElementById('sidebar');
+        const hamburger = document.querySelector('.hamburger');
+
+        if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
+            sidebar.classList.remove('active');
+        }
+    });
+</script>
+
+                        <!-- navbar  END -->
+
 
     <!-- Kategori -->
     <nav class="bg-white shadow-sm sticky top-[60px] z-40">
@@ -50,61 +80,72 @@
 
     <!-- Katalog Produk -->
     <div class="container mt-4">
-        <div class="row">
-            @php
-                $products = [
-                    [
-                        'name' => 'Red Dress',
-                        'price' => 250000,
-                        'image' => asset('../images/Reddress.jpg') // Ganti dengan nama file gambar baru
-                    ],
-                    [
-                        'name' => 'Blue Skirt',
-                        'price' => 200000,
-                        'image' => asset('../images/Blueskirt.jpg') // Ganti dengan nama file gambar baru
-                    ],
-                    [
-                        'name' => 'Black Trousers',
-                        'price' => 300000,
-                        'image' => asset('../images/Blackjeans.jpg') // Ganti dengan nama file gambar baru
-                    ],
-                    [
-                        'name' => 'Denim Jeans',
-                        'price' => 350000,
-                        'image' => asset('../images/Denimjeans.jpg') // Ganti dengan nama file gambar baru
-                    ],
-                ];
-            @endphp
+    <div class="row">
+        @php
+            $products = [
+                [
+                    'name' => 'Red Dress',
+                    'price' => 250000,
+                    'image' => asset('../images/Reddress.jpg'),
+                    'link' => route('reddress') // Tambahkan link ke laman Red Dress
+                ],
+                [
+                    'name' => 'Blue Skirt',
+                    'price' => 200000,
+                    'image' => asset('../images/Blueskirt.jpg')
+                ],
+                [
+                    'name' => 'Black Trousers',
+                    'price' => 300000,
+                    'image' => asset('../images/Blackjeans.jpg')
+                ],
+                [
+                    'name' => 'Denim Jeans',
+                    'price' => 350000,
+                    'image' => asset('../images/Denimjeans.jpg')
+                ],
+            ];
+        @endphp
 
-            @if (!empty($products))
-                @foreach($products as $product)
-                    <div class="col-md-3 mb-4">
-                        <div class="product-card text-center">
-                            <img src="{{ $product['image'] }}" alt="{{ $product['name'] }}" class="product-image">
-                            <h5 class="product-title">{{ $product['name'] }}</h5>
-                            <p class="product-price">Rp {{ number_format($product['price'], 0, ',', '.') }}</p>
-                        </div>
+        @if (!empty($products))
+            @foreach($products as $product)
+                <div class="col-md-3 mb-4">
+                    <!-- Hanya tambahkan link jika ada 'link' -->
+                    @if (!empty($product['link']))
+                        <a href="{{ $product['link'] }}" style="text-decoration: none; color: inherit;">
+                    @endif
+
+                    <div class="product-card text-center">
+                        <img src="{{ $product['image'] }}" alt="{{ $product['name'] }}" class="product-image">
+                        <h5 class="product-title">{{ $product['name'] }}</h5>
+                        <p class="product-price">Rp {{ number_format($product['price'], 0, ',', '.') }}</p>
                     </div>
-                @endforeach
-            @else
-                <p class="text-center">No products available.</p>
-            @endif
-        </div>
+
+                    @if (!empty($product['link']))
+                        </a>
+                    @endif
+                </div>
+            @endforeach
+        @else
+            <p class="text-center">No products available.</p>
+        @endif
     </div>
+</div>
+
 
     
     <!-- Footer Start -->
     <footer class="footer">
         <div class="container-foot">
             <div class="footer-title">Verceva</div>
-            <div class="footer-nav">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Catalogue</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
+           <div class="footer-nav">
+    <ul>
+        <li><a href="{{ route('home') }}">Home</a></li>
+        <li><a href="{{ route('catalog') }}">Catalogue</a></li>
+        <li><a href="{{ route('about') }}">About</a></li>
+        <li><a href="{{ route('contact') }}">Contact</a></li>
+    </ul>
+</div>
             <div class="social-icons">
                 <a href="#"><i class="fab fa-pinterest"></i></a>
                 <a href="#"><i class="fab fa-linkedin"></i></a>

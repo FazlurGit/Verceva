@@ -1,0 +1,452 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+html, body {
+    overflow-x: hidden; /* Menghilangkan scroll horizontal */
+    width: 100%;
+}
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Navbar Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #d1c7bd;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: grey;
+    font-size: 28px;
+    font-weight: 700;
+    font-style: italic;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.logo span {
+    color: white;
+    font-weight: 400;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    transition: all 0.3s;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.nav-links li a:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon a {
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+/* ===== HAMBURGER MENU ===== */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -230px; /* Sidebar awalnya tersembunyi */
+    width: 230px;
+    height: 100vh;
+    background-color: #d1c7bd;
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    padding: 20px;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar.active {
+    right: 0; /* Sidebar muncul */
+}
+
+.sidebar .close-btn {
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 50px 0;
+    width: 100%;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+    transition: 1s;
+}
+
+.sidebar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width: 800px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .icon {
+        display: none;
+    }
+}
+
+/* Product Detail Section */
+.product-detail {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Efek Zoom untuk Gambar */
+.product-gallery img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* Transisi halus */
+}
+
+.product-gallery img:hover {
+    transform: scale(1.2); /* Zoom-in 20% */
+    cursor: pointer; /* Menunjukkan pointer saat hover */
+}
+
+.product-gallery {
+    overflow: hidden;
+    width: 350px; /* Atur lebar sesuai kebutuhan */
+    height: auto;
+    border-radius: 8px;
+}
+
+
+.product-info {
+    flex: 1;
+}
+
+.color-options .color {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.color.black {
+    background-color: black;
+}
+
+.color.white {
+    background-color: white;
+}
+
+.size-options span {
+    display: inline-block;
+    padding: 8px 12px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.description, .you-may-like, .recently-viewed {
+    margin-top: 30px;
+}
+
+/* Section for You May Also Like */
+.you-may-like {
+    margin-top: 30px;
+}
+
+.you-may-like h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.product-suggestions {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.suggestion-item {
+    width: 23%; /* Sesuaikan lebar tiap item agar muat dalam satu baris */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #f8f8f8;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.suggestion-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.suggestion-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Efek Zoom Kaca Pembesar */
+.magnifier {
+    position: absolute;
+    border: 2px solid #333;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    display: none;
+    cursor: none;
+    pointer-events: none;
+}
+
+.magnifier img {
+    position: absolute;
+    width: 200%; /* Perbesar gambar untuk efek zoom */
+}
+
+/* Wrapper for recently viewed items */
+.product-recently-viewed-wrapper {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* Individual recently viewed item style */
+.product-recently-viewed {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    text-align: center;
+    border-radius: 8px;
+}
+
+/* Hidden content style */
+.hidden {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in-out;
+}
+
+.expanded-content {
+    max-height: 500px; /* Sesuaikan dengan kebutuhan */
+}
+
+
+/* Cursor pointer for headers */
+.section-header {
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 50px;
+    transition: transform 0.2s ease-in-out, border-bottom 0.3s ease-in-out;
+}
+
+.section-header:hover {
+    padding-right: 50px;
+    transform: scale(1.01); /* Sedikit membesar */
+    border-bottom: 2px solid black; /* Garis bawah muncul */
+    
+}
+
+/* Optional: Add dropdown arrow next to headers */
+.section-header::after {
+    content: "▼"; /* Default arrow pointing down */
+    font-size: 0.8em;
+    margin-left: 10px;
+}
+
+/* Rotate arrow when content is expanded */
+.expanded::after {
+    content: "▲";
+}
+
+/* Gaya panah dropdown */
+.section-header::after {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    transform: rotate(-45deg);
+    transition: transform 0.3s ease;
+    margin-left: 10px;
+}
+
+/* Rotate arrow when content is expanded */
+.expanded::after {
+    transform: rotate(135deg);
+}
+
+.color {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.color:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.size-options span {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.size-options span:hover {
+    background-color: #ddd;
+    transform: scale(1.1);
+}
+
+.section-header::after {
+    transition: transform 0.3s ease;
+}
+
+.expanded::after {
+    transform: rotate(135deg);
+}
+
+
+/* Footer */
+.footer {
+    padding: 20px 0;
+    text-align: center;
+    background-color: #f8f8f8;
+    margin-top: 50px;
+}
+
+.footer-title {
+    font-family: 'Lucida', serif;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: #2f2f2f;
+    margin-bottom: 20px;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 12px;
+}
+
+.footer-nav ul li a:hover {
+    color: #000;
+    transition: 0.5s;
+}
+
+.footer .social-icons {
+    margin-top: 15px;
+}
+
+.footer .social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 20px;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+    color: #000;
+}
+
+.footer .copyright {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #777;
+}
+
+
+@media (max-width: 768px) {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .product-detail {
+        flex-direction: column;
+    }
+}

@@ -26,10 +26,10 @@
     <a href="#"><h2 class="logo">Verc<span>eva</span>.</h2></a>
 
     <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Catalogue</a></li>
-        <li><a href="{{ route('about') }}">About</a></li>
-        <li><a href="{{ route('contact') }}">Contact</a></li>
+            <li><a href="{{ route('home') }}">Home</a></li>
+            <li><a href="{{ route('catalog') }}">Catalogue</a></li>
+            <li><a href="{{ route('about') }}">About</a></li>
+            <li><a href="{{ route('contact') }}">Contact</a></li>
     </ul>
 
     <div class="icon">
@@ -43,8 +43,8 @@
     <div class="sidebar" id="sidebar">
         <span class="close-btn" onclick="toggleMenu()">×</span>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Catalogue</a></li>
+            <li><a href="{{ route('home') }}">Home</a></li>
+            <li><a href="{{ route('catalog') }}">Catalogue</a></li>
             <li><a href="{{ route('about') }}">About</a></li>
             <li><a href="{{ route('contact') }}">Contact</a></li>
         </ul>
@@ -87,6 +87,8 @@
         <button class="arrow arrow-left">&#8249;</button>
         <button class="arrow arrow-right">&#8250;</button>
     </div>
+
+     <!-- Landing page js -->
 
     <script>
         const slides = document.querySelector('.slides');
@@ -133,6 +135,7 @@
 
     startAutoScroll();
 </script>
+<!-- Landing page js -->
     </div>
 
                     <!-- Landing Page End-->
@@ -150,17 +153,14 @@
             <div class="card">
                 <img src="images/product1.jpg" alt="Promo 1">
                 <p>-30% off on all bags</p>
-                <button>Shop Now</button>
             </div>
             <div class="card active"> <!-- Card tengah -->
                 <img src="images/product2.jpg" alt="Promo 2">
                 <p>-30% off coats & jackets</p>
-                <button>Shop Now</button>
             </div>
             <div class="card">
                 <img src="images/product1.jpg" alt="Promo 3">
                 <p>-25% off on shoes</p>
-                <button>Shop Now</button>
             </div>
         </div>
 
@@ -202,7 +202,7 @@
     </div>
 </section>
 
-<!-- JavaScript -->
+<!-- New Arrival JavaScript -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const carousels = document.querySelectorAll(".carousel-container"); // Ambil semua carousel-container
@@ -226,12 +226,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 </script>
-
-
-
-
-
-
                         <!-- NEW Arrival END-->
 
                         <!-- Image Container start-->
@@ -241,14 +235,11 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="image-box" style="background-image: url('images/poster1.png');"></div>
 </section>
 
-
-                        <!-- Image Container End -->
+                      <!-- Image Container End -->
 
 
                         
-
-
-                         <!-- Testimonial Start -->
+                        <!-- Testimonial Start -->
 
 <section class="testimonials">
     <div class="subtitle">Only The Best</div>
@@ -261,11 +252,10 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
     </div>
 </section>
-
-
-                        <!-- Testimonial End -->
+                       <!-- Testimonial End -->
 
                         
+                       
                        <!-- Poster promo start -->
 
  <div class="promo-section">
@@ -278,25 +268,25 @@ document.addEventListener("DOMContentLoaded", function () {
       <img src="images/promo.jpg" alt="Promotional Image">
     </div>
   </div>
+                      <!-- poster promo end -->
 
 
-                        <!-- poster promo end -->
 
 
-                        <!-- Footer Start -->
+                    <!-- Footer Start -->
 
 
 <footer class="footer">
   <div class="container-foot">
     <div class="footer-title">Verceva</div>
     <div class="footer-nav">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Catalogue</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
+    <ul>
+        <li><a href="{{ route('home') }}">Home</a></li>
+        <li><a href="{{ route('catalog') }}">Catalogue</a></li>
+        <li><a href="{{ route('about') }}">About</a></li>
+        <li><a href="{{ route('contact') }}">Contact</a></li>
+    </ul>
+</div>
     <div class="social-icons">
       <a href="#"><i class="fab fa-pinterest"></i></a>
       <a href="#"><i class="fab fa-linkedin"></i></a>
@@ -305,7 +295,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <a href="#"><i class="fab fa-twitter"></i></a>
     </div>
     <p class="copyright">
-    Copyright © 2025 Verceva. All rights reserved.
+    Copyright &br123 2025 Verceva. All rights reserved.
     </p>
   </div>
 </footer>

@@ -291,79 +291,143 @@ nav {
                      /* contact start  */
 
   .container {
-            max-width: 1100px;
-            margin: 20px auto;
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            margin-bottom: 100px;
-        }
-        .info-cards {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-        .info-card {
-            flex: 1;
-            text-align: center;
-            padding: 20px;
-            margin: 0 10px;
-            background: #0d274d;
-            color: #fff;
-            border-radius: 8px;
-            position: relative;
-        }
-        .info-card h3 {
-            margin: 10px 0;
-        }
-        .info-card p {
-            margin: 0;
-        }
-        .info-card i {
-            font-size: 30px;
-            margin-bottom: 10px;
-            display: inline-block;
-            color: #ff9900;
-        }
-        .form-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-        .form-container form {
-            flex: 1;
-            margin-right: 20px;
-        }
-        .form-container input, .form-container textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-        .form-container button {
-            background-color: #ff9900;
-            color: #fff;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 4px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        .form-container button:hover {
-            background-color: #e68a00;
-        }
-        .map {
-            flex: 1;
-        }
-        iframe {
-            width: 100%;
-            height: 374px;
-            border: none;
-            border-radius: 8px;
-        }
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 100px;
+}
+
+/* Info Cards */
+.info-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Jarak antar kartu */
+    margin-bottom: 20px;
+}
+
+.info-card {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    background: #0d274d;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.info-card i {
+    font-size: 30px;
+    color: #ff9900;
+    margin-bottom: 10px;
+}
+
+.info-card h3 {
+    margin: 10px 0;
+}
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.form-container form {
+    flex: 1;
+    margin-right: 20px;
+}
+.form-container input, .form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+.form-container button {
+    background-color: #ff9900;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.form-container button:hover {
+    background-color: #e68a00;
+}
+.map {
+    flex: 1;
+}
+iframe {
+    width: 100%;
+    height: 374px;
+    border: none;
+    border-radius: 8px;
+}
+
+/* RESPONSIVE GRID */
+
+/* Tablet (maks 1024px) */
+@media (max-width: 1024px) {
+    .info-cards {
+        flex-wrap: wrap; /* Supaya kartu bisa turun ke bawah */
+        gap: 15px;
+    }
+
+    .info-card {
+        flex: 1 1 calc(50% - 15px); /* Dua kolom di tablet */
+    }
+    .promo-text button{
+        display: none;
+    }
+}
+
+/* Mobile (maks 768px) */
+@media (max-width: 768px) {
+    .info-cards {
+        flex-direction: column; /* Susun ke bawah */
+        gap: 10px;
+    }
+
+    .info-card {
+        width: 100%;
+    }
+    .promo-text button{
+        display: none;
+    }
+}
+
+/* Mobile Kecil (maks 480px) */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px; /* Kurangi padding agar tidak terlalu lebar */
+    }
+
+    .info-cards {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .info-card {
+        width: 100%;
+        padding: 15px; /* Sesuaikan padding agar tetap proporsional */
+    }
+
+    .info-card i {
+        font-size: 24px; /* Kurangi ukuran ikon agar pas di layar kecil */
+    }
+
+    .info-card h3 {
+        font-size: 18px; /* Sesuaikan ukuran teks */
+    }
+
+    .info-card p {
+        font-size: 14px; /* Sesuaikan ukuran teks agar tetap terbaca */
+    }
+    .promo-text button{
+        display: none;
+    }
+}
 
             /* contact end  */
 
